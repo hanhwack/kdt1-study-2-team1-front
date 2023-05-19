@@ -2,10 +2,11 @@ import { REQUEST_PRODUCT_LIST_TO_SPRING } from "./mutation-types";
 import { REQUEST_PRODUCT_TO_SPRING } from "./mutation-types";
 
 import axiosInst from "@/utility/axiosInst";
+import mainRequest from "@/api/mainRequest";
 
 export default {
   requestProductListToSpring({ commit }) {
-    return axiosInst.get("product-problem/list").then((res) => {
+    return mainRequest.get("product-problem/list").then((res) => {
       commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data);
     });
   },
@@ -15,13 +16,13 @@ export default {
       alert("상품 ID가 유효하지 않습니다.");
       return;
     }
-    return axiosInst.get(`product-problem/${productId}`).then((res) => {
+    return mainRequest.get(`product-problem/${productId}`).then((res) => {
       commit(REQUEST_PRODUCT_TO_SPRING, res.data);
     });
   },
 
   requestDeleteProductToSpring({}, productId) {
-    return axiosInst
+    return mainRequest
       .delete(`product-problem/${productId}`)
       .then((res) => {
         alert("삭제 성공!");
@@ -40,7 +41,7 @@ export default {
       manufacturedDate,
       category,
     } = payload;
-    return axiosInst
+    return mainRequest
       .post("product-problem/register", {
         name,
         price,
@@ -67,7 +68,7 @@ export default {
       category,
       productId,
     } = payload;
-    return axiosInst
+    return mainRequest
       .put(`/product-problem/${productId}`, {
         name,
         price,
