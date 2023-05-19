@@ -5,10 +5,10 @@ services:
     container_name: next-page-nginx
     restart: unless-stopped
     volumes:
-      - /home/ec2-user/KDT1-STUDY2-3/deploy/kdt1-study-2-team1-front/conf:/etc/nginx/conf.d
-      - /home/ec2-user/KDT1-STUDY2-3/deploy/kdt1-study-2-team1-front/html:/usr/share/nginx/html
+      - /home/ec2-user/kdt1-study-2-team1-front/conf:/etc/nginx/conf.d
+      - /home/ec2-user/kdt1-study-2-team1-front/html:/usr/share/nginx/html
     ports:
-      - "8080"
+      - "80:80"
     networks:
       - app
 
