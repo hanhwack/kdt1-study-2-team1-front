@@ -9,10 +9,3 @@ services:
       - /home/ec2-user/kdt1-study-2-team1-front/html:/usr/share/nginx/html
     ports:
       - "80:80"
-    networks:
-      - app
-
-networks:
-  app:
-    name: server_network
-    external: true
