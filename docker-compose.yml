@@ -8,7 +8,7 @@ services:
       - /home/ec2-user/KDT-STUDY2-3/deploy/kdt1-study-2-team1-front/conf:/etc/nginx/conf.d
       - /home/ec2-user/KDT-STUDY2-3/deploy/kdt1-study-2-team1-front/html:/usr/share/nginx/html
     ports:
-      - "80:80"
+      - "8080"
     networks:
       - app
 
